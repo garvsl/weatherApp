@@ -1,6 +1,8 @@
 import { format, compareAsc, fromUnixTime } from 'date-fns'
 import { currentWeather, nextWeather } from './pageSetup'
 
+const loading = document.querySelector('.loading')
+
 function weekForecast(forecastData) {
     forecastData.forEach((element) => {
         const { pop } = element
@@ -54,6 +56,7 @@ async function onInput(value) {
     const current = document.querySelector('.current').remove()
     const title = document.querySelector('.title').remove()
 
+    loading.style.opacity = '1'
     const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=947493e6333f4b1eeafa156080de17a6&units=imperial`,
         { mode: 'cors' }
@@ -81,11 +84,14 @@ async function onInput(value) {
     weekForecast(forecastData.list)
 
     addInput()
+
+    loading.style.opacity = '0'
 }
 
 async function success(position) {
     const lat = position.coords.latitude
     const lon = position.coords.longitude
+    loading.style.opacity = '1'
     const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=947493e6333f4b1eeafa156080de17a6&units=imperial`,
         { mode: 'cors' }
@@ -113,6 +119,7 @@ async function success(position) {
     currentWeather(newDate, icon, temp, description, place, country)
 
     addInput()
+    loading.style.opacity = '0'
 }
 
 async function error() {

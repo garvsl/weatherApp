@@ -81,6 +81,17 @@ body {
     text-shadow: 0px 0px 5px whitesmoke;
 }
 
+.loading {
+    position: absolute;
+    top: 0;
+    transition: 0.15s ease-in-out;
+    opacity: 1;
+}
+
+input {
+    height: 35px;
+}
+
 .current h1 {
     font-weight: 600;
 }
