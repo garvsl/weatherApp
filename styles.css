@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700;800;900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    width: 100vw;
+    /* overflow: hidden; */
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+}
+
+.backgroundIMG {
+    position: absolute;
+    grid-row: 1/-1;
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: none;
+    transition: 0.5s ease-in-out;
+}
+
+.current {
+    grid-row-start: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    align-items: center;
+    font-family: 'Cinzel', serif;
+    border-radius: 100%;
+
+    color: white;
+    box-shadow: 0px 0px 10px 35px 50px rgba(244, 133, 21, 0.252);
+    transition: 0.5s ease-in-out;
+    user-select: none;
+}
+
+.nextContainer {
+    grid-row-start: 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.next {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    font-family: 'Cinzel', serif;
+    border-radius: 100%;
+
+    color: white;
+    box-shadow: 0px 0px 50px rgb(33, 74, 169);
+    transition: 0.5s ease-in-out;
+    user-select: none;
+    width: 250px;
+    height: 250px;
+
+    background-color: rgb(51, 80, 146);
+}
+
+/* .next:nth-child(1) {
+    display: flex;
+} */
+
+.current h1 {
+    font-weight: 600;
+}
+
+.current h3 {
+    font-weight: 500;
+    margin-top: -15px;
+}
+
+.current img {
+    width: 75px;
+    height: auto;
+}
+
+.tempImgCov {
+    margin-top: -35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filterCirc {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: rgb(245, 127, 53);
+    z-index: -1;
+    filter: blur(15px);
+    transition: 0.5s ease-in-out;
+}
+
+.filterCirc {
+    color: black;
+    background-color: white;
+    box-shadow: 0px 0px 10px 35px 50px rgba(0, 0, 0, 0.252);
+}
+
+.next h3 {
+    margin-top: -20px;
+}
+
+.current {
+    color: black;
+    background-color: white;
+    box-shadow: 0px 0px 10 35px 50px rgba(0, 0, 0, 0.252);
+}
+
+/* .backgroundIMG {
+    filter: grayscale(80%);
+} */
