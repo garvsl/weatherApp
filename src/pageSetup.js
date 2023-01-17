@@ -2,7 +2,7 @@ import sky from './sky.jpeg'
 
 const content = document.getElementById('content')
 
-function background() {
+export function background() {
     const backgroundIMG = document.createElement('img')
     backgroundIMG.classList.add('backgroundIMG')
     backgroundIMG.src = sky
@@ -13,7 +13,7 @@ function background() {
     content.appendChild(nextContainer)
 }
 
-export function currentWeather(day, icon, temp, condition) {
+export function currentWeather(day, icon, temp, condition, place, country) {
     const current = document.createElement('div')
     current.classList.add('current')
 
@@ -42,6 +42,17 @@ export function currentWeather(day, icon, temp, condition) {
     const filterCirc = document.createElement('div')
     filterCirc.classList.add('filterCirc')
     current.appendChild(filterCirc)
+
+    const titleHeader = document.createElement('div')
+    titleHeader.classList.add('title')
+    content.appendChild(titleHeader)
+
+    const title = document.createElement('h1')
+    title.textContent = `${place}, ${country}`
+    titleHeader.appendChild(title)
+
+    const input = document.createElement('input')
+    titleHeader.appendChild(input)
 }
 
 export function nextWeather(day, icon, temp, condition, pop) {
@@ -74,8 +85,4 @@ export function nextWeather(day, icon, temp, condition, pop) {
     const currentCondition = document.createElement('h3')
     currentCondition.textContent = `${condition}`
     next.appendChild(currentCondition)
-}
-
-export default function pageSetup() {
-    background()
 }

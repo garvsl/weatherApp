@@ -1,8 +1,5 @@
 import getLoc from './getlocation'
-import pageSetup from './pageSetup'
-
-console.log('hello')
+import { background } from './pageSetup'
 
 getLoc()
-
-pageSetup()
+background()
