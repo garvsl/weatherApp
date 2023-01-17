@@ -72,7 +72,7 @@ async function onInput(value) {
     currentWeather(newDate, icon, temp, description, place, country)
 
     const forecastResponse = await fetch(
-        `http://api.openweathermap.org/data/2.5/forecast?q=${value}&appid=947493e6333f4b1eeafa156080de17a6&units=imperial`,
+        `https://api.openweathermap.org/data/2.5/forecast?q=${value}&appid=947493e6333f4b1eeafa156080de17a6&units=imperial`,
         { mode: 'cors' }
     )
 
@@ -93,7 +93,7 @@ async function success(position) {
     const weatherData = await response.json()
 
     const forecastResponse = await fetch(
-        `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=947493e6333f4b1eeafa156080de17a6&units=imperial`,
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=947493e6333f4b1eeafa156080de17a6&units=imperial`,
         { mode: 'cors' }
     )
 
@@ -136,7 +136,7 @@ async function error() {
     currentWeather(newDate, icon, temp, description, place, country)
 
     const forecastResponse = await fetch(
-        `http://api.openweathermap.org/data/2.5/forecast?q=New York&appid=947493e6333f4b1eeafa156080de17a6&units=imperial`,
+        `https://api.openweathermap.org/data/2.5/forecast?q=New York&appid=947493e6333f4b1eeafa156080de17a6&units=imperial`,
         { mode: 'cors' }
     )
 
